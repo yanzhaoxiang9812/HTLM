@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>readonly和disable</title>
+</head>
+<body>
+    <!--
+        readonly和disable的相同点：都是只允许读，不允许改。
+        但是在提交数据的时候disable修饰的控件数据不会提交给后端。
+    -->
+    <form>
+        用户id<input type="text" name="userid" value="123" readonly>
+        用户名<input type="text" name="username" value="yzx" disabled>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
