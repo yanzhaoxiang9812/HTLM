@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格进阶</title>
+</head>
+<body>
+    <table align="center" border="1" width="50%">
+        <tr align="center">
+            <td>
+                a
+            </td>
+            <td>
+                b
+            </td>
+            <td>
+                c
+            </td>
+            <td>
+                d
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                e
+            </td>
+            <td>
+                f
+            </td>
+            <td>
+               g
+            </td>
+            <td>
+                h
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                i
+            </td>
+            <td>
+               j
+            </td>
+            <td>
+                k
+            </td>
+            <td>
+                l
+            </td>
+        </tr>
+    </table>
+
+
+    <!--
+        合并l 和 h 这两个的单元格
+        删除下面的单元格，给上面的单元格添加rowspan="2"
+        2表示合并两个单元格
+
+        合并a e i
+
+        合并j k
+
+    -->
+    <hr color="black">
+    <table align="center" border="1" width="50%">
+        <tr>
+            <!--
+               <th>标签也是单元格标签
+               会自动加粗字体并居中。
+            -->
+            <th>
+                第一列
+            </th>
+            <th>
+                第二列
+            </th>
+            <th>
+                第三列
+            </th>
+            <th>
+                第四列
+            </th>
+        </tr>
+        <tr align="center">
+            <td rowspan="3">
+                a+e+i
+            </td>
+            <td>
+                b
+            </td>
+            <td>
+                c
+            </td>
+            <td>
+                d
+            </td>
+        </tr>
+        <tr align="center">
+            <!--
+            <td>
+                e
+            </td>
+            -->
+            <td>
+                f
+            </td>
+            <td>
+                g
+            </td>
+            <td rowspan="2">
+                h+l
+            </td>
+        </tr>
+        <tr align="center">
+            <!--
+            <td>
+                i
+            </td>
+            -->
+            <td colspan="2">
+                j+k
+            </td>
+
+            <!--
+            <td>
+                k
+            </td>
+
+           -->
+            <!--
+
+            <td>
+                l
+            </td>
+
+            -->
+        </tr>
+    </table>
+
+
+    <!--
+        thead,tbody,tfoot
+    -->
+    <hr color="black">
+    <table align="center" border="1" width="50%">
+        <thead>
+            <tr>
+                    <th>
+                        第一列
+                    </th>
+                    <th>
+                        第二列
+                    </th>
+                    <th>
+                        第三列
+                    </th>
+                    <th>
+                        第四列
+                    </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center">
+                <td rowspan="3">
+                    a+e+i
+                </td>
+                <td>
+                    b
+                </td>
+                <td>
+                    c
+                </td>
+                <td>
+                    d
+                </td>
+            </tr>
+
+            <tr align="center">
+                <td>
+                    f
+                </td>
+                <td>
+                    g
+                </td>
+                <td rowspan="2">
+                    h+l
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    j+k
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
