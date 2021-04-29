@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMML中引入css样式的第二种方式:样式块</title>
+    <style type="text/css">
+        /*
+            这是css的注释
+         */
+
+
+        /* id选择器
+           #id{
+           ...
+           }
+         */
+        #span1{
+            color: red;
+            font: 20px;
+        }
+
+
+        /* 标签选择器
+            标签名{
+            ...
+            }
+        */
+        div{
+            background-color: blue;
+            border: 10px solid red;
+            width: 100px;
+            height: 50px;
+        }
+
+
+        /*类选择器
+        .类名{
+        ...
+        }
+         */
+
+        .myclass{
+            border: 1px solid red;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <span id="span1">HMML中引入css样式的第二种方式:样式块</span>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <br>
+    <input type="text" class="myclass">
+    <br>
+    <select class="myclass">
+        <option>
+            1
+        </option>
+        <option>
+            4
+        </option>
+        <option>
+            2
+        </option>
+    </select>
+
+</body>
+</html>
