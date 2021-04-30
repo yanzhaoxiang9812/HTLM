@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML嵌入js的第一种方式</title>
+    <!--第一种方式：在标签中加入事件句柄-->
+</head>
+<body>
+    <!--
+    js是一种事件驱动编程语言，依靠事件去驱动程序的执行。
+    -->
+    <input type="button" value="单击" onclick="window.alert('fuck');">
+    <!--click是js的一种事件，onclick是该事件的事件句柄。事件句柄以HTML标签的属性存在。-->
+    <!--onclick的描述就是该事件句柄的js代码。window是指游览器窗口对象，alert方法是打开一个消息框-->
+    <input type="button" value="单击" onclick="window.alert('fuck');">
+    <input type="button" value="单击" onclick="window.alert('fuck1')
+                                                window.alert('fuck2')
+                                                window.alert('fuck3')
+                                                window.alert('fuck4');">
+    <input type="button" value="单击" onclick="alert('fuck');">
+        <!--window可以省略-->
+</body>
+</html>

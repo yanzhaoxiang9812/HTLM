@@ -1,0 +1,28 @@
+<script type="application/javascript">
+    alert("hello js ");
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="application/javascript">
+        alert("hello js ");
+    </script>
+    <meta charset="UTF-8">
+    <title>HTML嵌入js的第二种方式</title>
+    <!--第二种方式：脚本块-->
+</head>
+<body>
+    <script type="application/javascript">
+        <!--
+        暴露在脚本块的程序会在页面打开时自上向下逐行执行。且在一个HTML页面脚本块可以编写多个，且位置随意。
+        -->
+        alert("hello js ");
+        alert("hello js 2");
+        <!--alert会阻挡页面加载-->
+    </script>
+    <input type="button" value="按钮">
+</body>
+</html>
+<script type="application/javascript">
+    alert("hello js ");
+</script>
