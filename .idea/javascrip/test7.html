@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js中数据类型</title>
+</head>
+<body>
+    <script>
+        /*
+            原始类型：Undefined,Number,String,Boolean,Null
+            引用类型：Object及其子类。
+            在ES6之后添加了Symbol类型。
+
+            typeof运算符可以动态的获取变量的数据类型。
+                typeof 变量名;
+                运算结果为六种字符之一:undefined,number,string,boolean,object,funtion.
+                在js中比较字符串使用“==”完成。
+         */
+        // 编写一个只允许数字相加的函数。
+        function sum(a,b) {
+            if (typeof a == "number" && typeof b == "number"){
+                return a+b;
+            }
+            alert("对不起，请输入数字。");
+        }
+
+        var a;
+        alert(typeof a);//undefined
+        var b = 99;
+        alert(typeof b);//number
+        var c = "java";
+        alert(typeof c);//string
+        var d = null;
+        alert(typeof d);//object
+        var e = false;
+        alert(typeof e);//boolean
+        var obj = new Object();
+        alert(typeof obj);//object
+        alert(typeof sum);//funtion
+
+
+        /*
+                Undefined类型
+                    只有一个值就是:undefined.
+                    当变量没有手动赋值，系统自动赋值undefined。（也可以手动赋值undefined）
+         */
+        var u1;
+        alert(typeof u1);
+        var u2 = undefined;
+        alert(typeof u2);
+        var u3 = "undefined"
+        alert(typeof u3);
+
+        /*
+                Number类型
+                Number类型包括了所有数字。
+         */
+        //以下五个变量都是Number数据类型。
+        var n1 = 1;
+        alert(typeof n1);
+        var n2 = -1;
+        alert(typeof n2);
+        var n3 = 2.22222222;
+        alert(typeof n3);
+        var n4 = NaN;
+        //NaN表示‘Not a Number’，不是数字但属于Number数据类型。在运算后结果不是数字，则该结果为NaN.
+        alert(typeof n4);
+        var n5 =Infinity;
+        //Infinity当除数为0的时候，结果为无穷大。
+        alert(typeof n5);
+
+        //关于isNaN函数。
+        alert(isNaN(1));//false.1不是一个NaN.
+            //修改数字相加的函数。
+            function sum2(a,b) {
+                if (isNaN(a) || isNaN(b)){
+                    alert("请输入数字。");
+                    return;
+                }
+                return a + b;
+            }
+
+        //parseInt函数,将字符串自动转化为数字，并取整数位。
+        alert(parseInt('33.3333'));
+        //parsFloat函数，将字符串自动转化为数字
+        alert(parseFloat("33.3333"));
+        //Math.ceil函数,向上取整。
+        alert(Math.ceil(9.1));//10
+
+
+    </script>
+</body>
+</html>

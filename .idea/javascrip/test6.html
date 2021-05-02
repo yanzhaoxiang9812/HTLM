@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js中的局部变量和全局变量</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            全局变量：在函数体之前声明的变量。
+            局部变量：在函数体内部声明的变量（包括函数的形式参数）。
+         */
+
+        //全局变量：
+        var i = 100;
+        function showI(){
+            alert("i = " + i);//这里访问的是全局变量i
+        }
+        showI();
+
+        //局部变量：
+        function showY(){
+            var y = 99;
+            alert("y = "+ y);//这里访问的是局部变量y
+        }
+        showY();
+
+        var y = 88;
+        alert('y ='+y);//就近原则，访问的是全局变量y
+
+        function myFun() {
+            MyFun = 'java';
+        }
+        //调用函数。
+        myFun(alert("MyFun = " + MyFun));
+        alert("MyFun = " + MyFun);
+        //当一个变量在声明的时候没有使用var关键字，那么这个变量位置无论在哪都是全局变量。
+
+    </script>
+</body>
+</html>
