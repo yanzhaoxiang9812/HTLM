@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+           JS中常用事件：
+                    blur失去焦点
+                    focus获得焦点
+
+                    click鼠标单击
+                    dblclick鼠标双击
+
+                    keydown键盘按下
+                    keyup键盘弹起
+
+                    mousedown鼠标按下
+                    mouseover鼠标经过
+                    mousemove鼠标移动
+                    mouseout鼠标离开
+                    mouseup鼠标弹起
+
+                    reset表单重置
+                    submit表单提交
+
+                    change下拉列表选中项改变，或文本框内容改变select文本被选定
+                    load页面加载完毕（整个HTML页面中所有的元素全部加载完毕之后发生。)
+         */
+        function sayHello(){
+            alert("hello js");
+        }
+    </script>
+                         <!--注册事件-->
+
+                <!--第一种方式：在标签使用事件句柄-->
+    <input type="button" value="hello yzx1" onclick="sayHello()">
+    <!--这里的sayHello函数被称为‘回调函数’-->
+
+                 <!--第二种方式：js代码完成-->
+    <input type="button" value="hello yzx2" id="b1">
+    <input type="button" value="hello yzx3" id="b2">
+    <input type="button" value="hello yzx4" id="b3">
+    <script  type="text/javascript">
+        //获取按钮对象
+        var v1 = document.getElementById("b1");
+        //给该对象注册事件。
+        v1.onclick = sayHello;//这里的只能填写函数名，不能添加'()'
+        document.getElementById("b2").onclick = sayHello;
+
+        document.getElementById("b3").onclick = function () {
+            alert("匿名函数");
+        }
+    </script>
+</body>
+</html>
