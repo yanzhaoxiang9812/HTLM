@@ -41,6 +41,12 @@
     alert(v1["tel"]);
     alert(v1["loc"]);
 
+    /*              prototype动态扩展类的属性           */
+    f1.prototype.getName = function (){
+        return this.name;
+    }
+    alert(v1.getName);
+
 
     </script>
 </body>
