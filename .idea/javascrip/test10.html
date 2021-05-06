@@ -54,5 +54,20 @@
             alert("匿名函数");
         }
     </script>
+
+
+    <script  type="text/javascript">
+        window.onload = function (){
+            document.getElementById("mybutton").onclick = function (){
+                var v = document.getElementById("mytext");
+                v.type = "button";
+                v.value = "new button";
+            }
+        }
+    </script>
+    <br>
+    <input type="text" id="mytext">
+    <br>
+    <input type="button" value="将上面的文本框变为按钮" id="mybutton">
 </body>
 </html>

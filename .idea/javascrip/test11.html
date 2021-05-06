@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS代码捕捉回车键</title>
+</head>
+<body>
+    <script type="text/javascript">
+    window.onload = function (){
+        document.getElementById("text").onkeydown = function (event){
+            //event获取到的是onkeydown事件
+            if (event.keyCode == 13){
+                alert("success");
+            }
+        }
+    }
+    </script>
+    <input type="text" id="text"/>
+</body>
+</html>
