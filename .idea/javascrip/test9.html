@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object类型</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /*
+          Object是所有类型的超类，自定义的类都会继承Object类和函数。
+            Object主要的属性：
+                prototype
+                construtor
+
+
+           在js中定义类：
+                1.  function 类名(形参){
+                    .....
+                    }
+                2.  类名 = function(形参){
+                    .....
+                    }
+
+           在js中new对象：
+                new 构造函数(实参);//构造函数名和类名一致。
+     */
+    //  创建自定义类
+    function f1(f1,f2,f3){
+        //  类的属性
+        this.name = f1;
+        this.tel = f2;
+        this.loc = f3;
+    }
+    //  创建f1类的对象
+    var v1 = new f1("yzx",123,"shannxi");
+    //  访问v1对象的属性
+    alert(v1.name);
+    alert(v1.tel);
+    alert(v1.loc);
+    alert(v1["name"]);
+    alert(v1["tel"]);
+    alert(v1["loc"]);
+
+
+    </script>
+</body>
+</html>
