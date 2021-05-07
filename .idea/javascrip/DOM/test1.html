@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取文本框value</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        window.onload = function () {
+           document.getElementById("button1").onclick = function () {
+               alert(document.getElementById("text1").value);
+           }
+        }
+    </script>
+
+    <input type="text" id="text1"/>
+    <input type="button" id="button1" value="获取文本框内容"/>
+
+    <hr color="red">
+
+    <input type="text" id="text2"/>
+    <br>
+    <input type="button" id="button2" value="将上面的文本框内容添加到下面的文本框中"/>
+    <br>
+    <input type="text" id="text3"/>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("button2").onclick = function () {
+                document.getElementById("text3").value = document.getElementById("text2").value;
+            }
+        }
+    </script>
+</body>
+</html>

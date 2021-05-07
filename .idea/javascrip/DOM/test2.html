@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML和innerText操作第v和span</title>
+    <style type="text/css">
+        #div1{
+            background-color: red;
+            width: 500px;
+            height: 500px;
+            border: 10px #2b2b2b solid;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("bt1").onclick = function () {
+                //document.getElementById("div1").innerHTML = "FUCK LIFE";
+                // innerHTML属性设置元素内部的内容(会自动解析HTML代码)
+                document.getElementById("div1").innerHTML
+                    = "<font color='blue' size='50'>fuck life </font>";
+
+                /*document.getElementById("div1").innerText
+                    = "<font color='blue'>fuck life </font>";
+                 */
+
+                //innerText属性只会当作文本处理
+            }
+        }
+    </script>
+    <input type="button" value="设置div内容" id="bt1"/>
+    <dir id="div1"></dir>
+</body>
+</html>
