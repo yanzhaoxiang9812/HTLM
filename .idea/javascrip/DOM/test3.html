@@ -5,6 +5,31 @@
     <title>正则表达式</title>
 </head>
 <body>
+    <script type="text/javascript">
+        /*创建正则表达式对象
+        var regExp1 = /表达式/;
+        var regExp2 = new RegExp("表达式");
+         */
 
+
+        /*      简单案例：验证邮箱是否合法*/
+        window.onload = function () {
+                document.getElementById("text").onblur = function () {
+                    var emailRegExp =
+                    /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+                    if(emailRegExp.test(document.getElementById("text").value)){
+                        document.getElementById("sp").innerText = "邮箱地址合法";
+                    }else {
+                        document.getElementById("sp").innerText = "邮箱地址不合法";
+                    }
+                }
+                document.getElementById("text").onfocus =function (){
+                    document.getElementById("sp").innerText = "";
+                }
+        }
+    </script>
+    输入邮箱：
+    <input type="text" id="text"/>
+    <span style="color: red ;font-size: 2px" id="sp"></span>
 </body>
 </html>
