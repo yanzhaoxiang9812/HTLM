@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单表单验证</title>
+    <!--
+    (1）用户名不能为空
+    (2）用户名必须在6-14位之间
+    (3）用户名只能有数字和字母组成，不能含有其它符号（正则表达式)
+    (4）密码和确认密码一致，邮箱地址合法。
+    (5）统一失去焦点验证
+    (6）错误提示信息统一在span标签中提示，并且要求字体12号，红色。
+    (7）文本框再次获得焦点后，清空错误提示信息，如果文本框中数据不合法要求清空文本框的value
+    (8）最终表单中所有项均合法方可提交
+
+-->
+    <style type="text/css">
+        span{
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function (){
+            var unid = document.getElementById("u");
+            var s1 = document.getElementById("s1");
+            unid.onblur = function () {
+                var un = unid.value;
+                un = un.trim();
+                if(un === ""){
+                    s1.innerText = "用户名不能为空，请重新输入。";
+                }else {
+                    if(un.length < 6 || un.length > 14){
+                        s1.innerText = "用户名长度必须在[6-14]之间";
+                    }else {
+                        var unRE = /^[a-zA-Z0-9]+$/;
+                        var ok = unRE.test(un);
+                        if(ok){
+                            //succse
+                        }else {
+                            s1.innerText = "用户名必须由英文字母和数字组成。";
+                        }
+                    }
+                }
+            }
+            unid.onfocus = function () {
+                if(s1.innerText != ""){
+                    unid.value = "";
+                }else {
+                    s1.innerText = "";
+                }
+            }
+            var pwdid = document.getElementById("p2");
+            var s2 = document.getElementById("s2");
+            pwdid.onblur = function () {
+                var p1v = document.getElementById("p1").value;
+                var p2v = pwdid.value;
+                if(p1v !=  p2v){
+                    s2.innerText = "密码出入不一致，请重新输入。"
+                }else {
+                    //succse
+                }
+            }
+            pwdid.onfocus = function () {
+                if (s2.innerText != ""){
+                    pwdid.value = "";
+                }
+            }
+            var eid = document.getElementById("e");
+            var s3 = document.getElementById("s3");
+            eid.onblur = function () {
+                var emailRegExp =
+                    /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+                var ok = emailRegExp.test(eid.value);
+                if(ok){
+                    //succse
+                }else {
+                    s3.innerText = "邮箱地址不合法,请重新输入。";
+                }
+            }
+            eid.onfocus =function (){
+                if (s3.innerText != ""){
+                    eid.value = "";
+                }
+            }
+
+            document.getElementById("subminButton").onclick = function () {
+                unid.focus();
+                unid.blur();
+                pwdid.focus();
+                pwdid.blur();
+                eid.focus();
+                eid.blur();
+                if(s1.innerText == "" && s2.innerText == "" && s3.innerText == ""){
+                    document.getElementById("form").submit();
+                }
+            }
+        }
+    </script>
+    <form id="form" action="" method="get">
+        用户名：<input type="text" name="u" id="u">
+        <span id="s1"></span>
+        <br>
+        密码：<input type="password" name="p1" id="p1">
+        <br>
+        确认密码：<input type="password" id="p2">
+        <span id="s2"></span>
+        <br>
+        邮箱：<input type="text" name="e" id="e">
+        <span id="s3"></span>
+        <br>
+        <input type="button" value="注册" id="subminButton">
+        <input type="reset" value="重置">
+    </form>
+</body>
+</html>
