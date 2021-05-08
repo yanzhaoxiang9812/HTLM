@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            1、什么是3SON，有什么用?
+                JavaScript 0bject Notation (JavaScript对象标记），简称3SON。(数据交换格式)
+                    JSON主要的作用是:一种标准的数据交换格式。
+                    JSON也可以称为无类型对象.
+                2、JSON是一种标准的轻量级的数据交换格式。特点是:
+                    体积小，易解析。
+         */
+        //  创建JSON对象
+        var studentObj = {
+            "son" : "110",
+            "snme" : "张三",
+            "sex" : "男"
+        };
+        //  访问studentObj对象属性
+        alert(
+            studentObj.son + ',' + studentObj.snme + ',' + studentObj.sex
+        );
+    </script>
+</body>
+</html>

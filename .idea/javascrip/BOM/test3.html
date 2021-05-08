@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出消息框和确认框</title>
+</head>
+<body>
+    <input type="button" value="消息框" onclick="window.alert('hello')">
+    <input type="button" value="确认框" onclick="window.confirm()">
+    <br>
+    <input type="button" value="确认框" onclick="del()">
+    <script type="text/javascript">
+        function del() {
+            if (window.confirm("delete data yes or no")){
+                window.alert('yes')
+            }
+        }
+    </script>
+</body>
+</html>
