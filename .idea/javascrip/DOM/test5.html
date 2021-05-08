@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框的全选和取消全选</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var all = document.getElementById("all");
+            var cbs = document.getElementsByName("cb");
+            var cbsl = cbs.length;
+            all.onclick = function () {
+                for ( var i = 0 ; i < cbsl ; i++ ){
+                    cbs[i].checked = all.checked;
+                }
+            }
+            for ( var i = 0 ; i < cbsl ; i++ ){
+                cbs[i].onclick = function () {
+                    var count = 0;
+                    for ( var i = 0 ; i < cbsl ; i++ ){
+                        if(cbs[i].checked){
+                            count++;
+                        }
+                    }
+                    all.checked = (cbsl == count);
+                }
+            }
+        }
+    </script>
+    <input type="checkbox" name="cb" >cb1<br>
+    <input type="checkbox" name="cb" >cb2<br>
+    <input type="checkbox" name="cb" >cb3<br>
+    <input type="checkbox" name="cb" >cb4<br>
+    <input type="checkbox" name="cb" >cb5<br>
+    <input type="checkbox" name="cb" >cb6<br>
+    <input type="checkbox" id="all">全选<br>
+</body>
+</html>
