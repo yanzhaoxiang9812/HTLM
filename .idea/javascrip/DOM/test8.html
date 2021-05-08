@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置table的tbody</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var user = {
+            "userid" : '999',
+            "username" : "张三",
+            "sex" : '男 ',
+            "address" :  "西安鄠邑区"
+        }
+        window.onload = function () {
+            document.getElementById("button").onclick = function () {
+                var temp = "<tr><td>" + user.userid + "</td><td>" + user.username + "</td><td>" + user.sex + "</td><td>" + user.address + "</td></tr>" ;
+                document.getElementById("tbody").innerHTML = temp;
+            }
+        }
+    </script>
+    <h2>table</h2>
+    <table border="1px" width="50%">
+        <tr align="center">
+            <th>
+                用户ID
+            </th>
+            <th>
+                用户名
+            </th>
+            <th>
+                用户性别
+            </th>
+            <th>
+                用户住址
+            </th>
+            <tbody id="tbody" align="center">
+
+            </tbody>
+        </tr>
+    </table>
+    <br><br><br><br><br><br>
+    <input type="button" value="showTable" id="button">
+</body>
+</html>

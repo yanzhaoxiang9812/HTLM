@@ -11,6 +11,10 @@
          */
         window.eval("var  i = 100 ;");
         alert(i);
+
+        var fromJava = "{\"name\":\"张三\",\"password\" : \"123\"}";
+        window.eval("var jsonObj = " + fromJava);
+        alert(jsonObj.name + ',' + jsonObj.password);
     </script>
 </body>
 </html>
