@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonTest2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var user = {
+            "userid" : 999,
+            "username" : "张三",
+            "sex" : true,
+            "address" : {
+                "city" : "西安",
+                "street" : "鄠邑区",
+                "zipcod" : "710300"
+            }
+        }
+        alert(
+            user.username +  "  ," + user.sex + '   ,' +
+            '[' + user.address.city + ','+user.address.street + ',' + user.address.zipcod +']'
+        );
+    </script>
+</body>
+</html>
