@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示网页时钟</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*                JS中Data内置类，时间类。               */
+        document.write(new Date());
+        document.write("<br>")
+
+        //  .toLocaleString();    转化为本地语言环境时期格式。
+        document.write(new Date().toLocaleString());
+        document.write("<br>")
+
+        //  .getTime()      获取当前时间与1970/1/1 00:00:00 的毫秒时间差
+        document.write(new Date().getTime());
+    </script>
+    <br><br>
+    <hr color>
+    <input type="button" id="b1" value="StartShowTime" onclick="start()">
+    <input type="button" id="b2" value="StopShowTime" onclick="stop()">
+    <div id="d"></div>
+    <script type="text/javascript">
+        function showTime() {
+           document.getElementById("d").innerText =
+               new Date().toLocaleString();
+        }
+        function start() {
+            v= window.setInterval("showTime()",1000);
+            //  .setInterval("showTime()",1000) 每隔1000毫秒执行showTime()函数。
+        }
+        function stop() {
+            window.clearInterval(v);
+            // 根据变量v，结束.setInterval()函数
+        }
+    </script>
+    <style type="text/css">
+        #d{
+            background-color: red;
+            width: 160px;
+            height: 20px;
+        }
+    </style>
+</body>
+</html>
